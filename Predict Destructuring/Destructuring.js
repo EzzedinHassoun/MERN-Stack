@@ -3,7 +3,7 @@ const cars = ['Tesla','Mercedes','Honda']
 const[randomCar]=cars
 const[,otherrandom]=cars
 console.log(randomCar); //outbut is tesla
-console.log(otherrandom); //outbut is tesla,mercedes
+console.log(otherrandom); //outbut is mercedes
 
 
 // ===========2================
@@ -15,10 +15,10 @@ const employee={
 }
 
 
-const{name}=employee // is not defined
+const{name}=employee 
 const{name:othername}=employee
-console.log(name); //this is never work
-console.log(othername);
+console.log(name);   // print Elon
+console.log(othername); // print Elon
 
 // ===========3================
 
@@ -31,7 +31,7 @@ const person={
 const password ='12345';  //this key is not defined in the object 
 const{password:hashedPassword}=person 
 console.log(password); // print 12345
-console.log(hashedPassword);//this run error  because its not defined
+console.log(hashedPassword); // print 12344
 
 // ===========4================
 
