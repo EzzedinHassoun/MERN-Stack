@@ -1,0 +1,61 @@
+// ===========1================
+const cars = ['Tesla','Mercedes','Honda']
+const[randomCar]=cars
+const[,otherrandom]=cars
+console.log(randomCar); //outbut is tesla
+console.log(otherrandom); //outbut is tesla,mercedes
+
+
+// ===========2================
+
+const employee={
+    name:'Elon',
+    age:47,
+    company:'tesla'
+}
+
+
+const{name}=employee // is not defined
+const{name:othername}=employee
+console.log(name); //this is never work
+console.log(othername);
+
+// ===========3================
+
+const person={
+    name:'Phil Smith',
+    age:47,
+    hight:'6 feet',
+    password:'12344'
+}
+const password ='12345';  //this key is not defined in the object 
+const{password:hashedPassword}=person 
+console.log(password); // print 12345
+console.log(hashedPassword);//this run error  because its not defined
+
+// ===========4================
+
+const number=[8,2,3,5,6,1,67,12,2]
+const[,first]=number;
+const[,,,second]=number;
+const[,,,,,,,,third]=number
+console.log(first==second);//false 2 == 5
+console.log(first==third);//true  2 == 2
+
+// ===========5================
+
+const lastTest={
+    key:'value',
+    secondKey:[1,5,1,8,3,3]
+}
+const{key}=lastTest;
+const{secondKey}=lastTest;
+const[,willthiswork]=secondKey;
+console.log(key);// print value
+console.log(secondKey);// print [1,5,1,8,3,3]
+console.log(secondKey[0]);//print 1
+console.log(willthiswork);//print 5
+
+
+
+
