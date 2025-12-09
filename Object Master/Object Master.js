@@ -119,7 +119,7 @@ const pokémon = Object.freeze([
 
 // an array of pokémon objects where the id is evenly divisible by 3
 console.log("====================");
-const dividedby3 = pokémon.filter(p => p.id %3 == 0 )
+const dividedby3 = pokémon.filter(m => m.id %3 == 0 )
 console.log(dividedby3);
 
 
