@@ -16,10 +16,10 @@ import "../App.css";
   return (
     <div className="home-container">
       <form onSubmit={handleSubmit}>
-        <label> Enter a color:{" "} </label>
+        <label>Color:{" "} </label>
         <input type="text" value={color} onChange={(e) => setColor(e.target.value)}
           placeholder="e.g. red" />
-        <button type="submit">Add Box</button>
+        <button type="submit">Add </button>
       </form>
 
       <div className="box-container">
