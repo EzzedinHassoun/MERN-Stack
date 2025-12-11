@@ -1,0 +1,7 @@
+Postman + Pokemon:
+
+1. https://pokeapi.co/api/v2/pokemon/ivysaur
+2. https://pokeapi.co/api/v2/pokemon/bulbasaur
+3. https://pokeapi.co/api/v2/pokemon/1
+4. https://pokeapi.co/api/v2/pokemon/pidgeot
+5. https://pokeapi.co/api/v2/pokemon/6
