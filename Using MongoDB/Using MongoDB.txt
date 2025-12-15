@@ -1,0 +1,118 @@
+
+
+
+
+1. Create Database:
+use my_first_db
+===============================
+2. Create students collection:
+db.createCollection("students")
+===============================
+3. Insert 5 students:
+db.students.insertOne({
+  name: "Ezzedin",
+  home_state: "California",
+  lucky_number: 8,
+  birthday: { month: 11, day: 8, year: 1994 }
+})
+
+db.students.insertOne({
+  name: "Ahmad",
+  home_state: "Washington",
+  lucky_number: 5,
+  birthday: { month: 6, day: 12, year: 1996 }
+})
+
+db.students.insertOne({
+  name: "Sudqi",
+  home_state: "California",
+  lucky_number: 3,
+  birthday: { month: 2, day: 20, year: 1995 }
+})
+
+db.students.insertOne({
+  name: "Mahmoud",
+  home_state: "Washington",
+  lucky_number: 1,
+  birthday: { month: 9, day: 1, year: 1997 }
+})
+
+db.students.insertOne({
+  name: "Hassoun",
+  home_state: "Nevada",
+  lucky_number: 6,
+  birthday: { month: 3, day: 15, year: 1993 }
+})
+
+=========================================
+4. Get all students:
+db.students.find()
+=========================================
+5. Students from California or Washington:
+db.students.find({
+  home_state: { $in: ["California", "Washington"] }
+})
+==========================================
+6. Students with lucky_number > 3 :
+db.students.find({
+  lucky_number: { $gt: 3 }
+})
+=========================================
+7. Add interests array to ALL students (one operation):
+db.students.updateMany({}, {$set: { interests: ["coding", "brunch", "MongoDB"] }})
+
+===========================================
+8. Add unique interests to each student:
+db.students.updateOne({ name: "Ezzedin" }, { $addToSet: { interests: "football" } })
+db.students.updateOne({ name: "Ahmad" }, { $addToSet: { interests: "design" } })
+db.students.updateOne({ name: "Sudqi" }, { $addToSet: { interests: "gaming" } })
+db.students.updateOne({ name: "Mahmoud" }, { $addToSet: { interests: "reading" } })
+db.students.updateOne({ name: "Hassoun" }, { $addToSet: { interests: "travel" } })
+
+=======================================
+9. add interest "taxes" to one student:
+db.students.updateOne(
+  { name: "Ahmad" },
+  { $addToSet: { interests: "taxes" } }
+)
+=======================================
+10. Remove interest "taxes":
+db.students.updateOne(
+  { name: "Ahmad" },
+  { $pull: { interests: "taxes" } }
+)
+======================================
+11. Remove all students from California:
+db.students.deleteMany({
+  home_state: "California"
+})
+=====================================
+12. Remove a student by name:
+db.students.deleteOne({
+  name: "Hassoun"
+})
+====================================
+13. Remove ONE student with lucky_number > 5 :
+db.students.deleteOne({
+  lucky_number: { $gt: 5 }
+})
+====================================== 
+14. Add number_of_belts = 0 to all students: 
+db.students.updateMany(
+  {},
+  { $set: { number_of_belts: 0 } }
+)
+=====================================
+15. Increment number_of_belts for Washington students :
+db.students.updateMany(
+  { home_state: "Washington" },
+  { $inc: { number_of_belts: 1 } }
+)
+============================================
+16. Add updated_on with current date :
+db.students.updateMany(
+  {},
+  { $currentDate: { updated_on: true } }
+)
+===========================================
+
