@@ -16,13 +16,7 @@ const DsplayProduct = () => {
             .catch(err => console.error(err));
     }, [id]);
 
-    const deleteProduct = (id) => {
-        axios.delete(`http://localhost:8000/api/product/${id}`)
-            .then(() => {
-                navigate("/"); 
-            })
-            .catch(err => console.error("Delete failed:", err));
-    };
+    
 
     return (
         <div>
